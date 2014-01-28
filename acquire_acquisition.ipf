@@ -943,7 +943,9 @@ function Set_Stim()
 			StimWave[index,(total_chan_num*(samples-1)+index);total_chan_num]=dac3_stimwave[(p-index)/(total_chan_num)]
 			break
 			default:
-			Stimwave[index,(total_chan_num*samples-index);total_chan_num]=ttl_stimwave[(p-index)/total_chan_num]
+				//Changed 01/28/2014 by TAB to fix a 0 being sent at end of TTL wave, original code is commented out
+				//Stimwave[index,(total_chan_num*samples-index);total_chan_num]=ttl_stimwave[(p-index)/total_chan_num]
+				Stimwave[index,(total_chan_num*samples-1)+index);total_chan_num]=ttl_stimwave[(p-index)/total_chan_num]
 			break
 		EndSwitch
 		index += 1
